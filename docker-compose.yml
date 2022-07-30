@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  mariadb:
+    image: xlonelyplayer/mariadb:1.0
+    container_name: mariadb
+    networks:
+      - node-app-compose-bridge
+    environment:
+      - MARIADB_ROOT_PASSWORD=Password123!
+    ports:
+      - 3306:3306
+
+networks:
+  node-app-compose-bridge:
+    driver: bridge
